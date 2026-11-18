@@ -1,45 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Story Rewrite & Remaster</title>
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090711">
+  <title>Story Rewrite: Remaster</title>
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-  <header class="site-header">
-    <h1>Story Rewrite &amp; Remaster</h1>
-    <p>Side-by-side comparison and remastered story reader.</p>
-  </header>
+  <main id="game" class="game">
+    <div class="scene-art" id="scene-art" aria-hidden="true">
+      <div class="moon"></div>
+      <div class="stars"></div>
+      <div class="city"></div>
+      <div class="character" id="character">
+        <div class="hair"></div>
+        <div class="face"><span class="eye left"></span><span class="eye right"></span></div>
+        <div class="body"></div>
+      </div>
+    </div>
 
-  <main class="container">
-    <section class="controls">
-      <label for="story-select">Select Story:</label>
-      <select id="story-select">
-        <option value="sample">Sample Story</option>
-      </select>
+    <header class="hud">
+      <div class="chapter" id="chapter">PROLOGUE</div>
+      <button id="menu-button" class="icon-button" aria-label="Open menu">☰</button>
+    </header>
 
-      <label for="view-mode">View Mode:</label>
-      <select id="view-mode">
-        <option value="side-by-side">Side-by-Side</option>
-        <option value="remastered-only">Remastered Only</option>
-        <option value="original-only">Original Only</option>
-      </select>
+    <section class="dialogue-panel" id="dialogue-panel">
+      <div class="speaker" id="speaker">Unknown</div>
+      <p class="dialogue" id="dialogue"></p>
+      <div class="choices" id="choices"></div>
+      <button class="continue-button" id="continue-button" aria-label="Continue">›</button>
     </section>
 
-    <section id="reader" class="reader-grid side-by-side">
-      <article class="pane" id="original-pane">
-        <h2>Original</h2>
-        <div id="original-content" class="story-text">Loading...</div>
-      </article>
+    <div class="menu hidden" id="menu">
+      <div class="menu-card">
+        <h2>Game Menu</h2>
+        <button id="continue-game">Continue</button>
+        <button id="restart-game">Restart Story</button>
+        <button id="save-game">Save Progress</button>
+        <button id="load-game">Load Progress</button>
+        <div class="menu-status" id="menu-status"></div>
+      </div>
+    </div>
 
-      <article class="pane" id="remastered-pane">
-        <h2>Remastered</h2>
-        <div id="remastered-content" class="story-text">Loading...</div>
-      </article>
-    </section>
+    <div class="ending hidden" id="ending">
+      <div class="ending-card">
+        <p class="ending-kicker">STORY COMPLETE</p>
+        <h1 id="ending-title"></h1>
+        <p id="ending-text"></p>
+        <button id="play-again">Rewrite the Story</button>
+      </div>
+    </div>
   </main>
-
   <script src="assets/js/app.js"></script>
 </body>
 </html>
