@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Story Rewrite & Remaster</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <h1>Story Rewrite &amp; Remaster</h1>
+    <p>Side-by-side comparison and remastered story reader.</p>
+  </header>
+
+  <main class="container">
+    <section class="controls">
+      <label for="story-select">Select Story:</label>
+      <select id="story-select">
+        <option value="sample">Sample Story</option>
+      </select>
+
+      <label for="view-mode">View Mode:</label>
+      <select id="view-mode">
+        <option value="side-by-side">Side-by-Side</option>
+        <option value="remastered-only">Remastered Only</option>
+        <option value="original-only">Original Only</option>
+      </select>
+    </section>
+
+    <section id="reader" class="reader-grid side-by-side">
+      <article class="pane" id="original-pane">
+        <h2>Original</h2>
+        <div id="original-content" class="story-text">Loading...</div>
+      </article>
+
+      <article class="pane" id="remastered-pane">
+        <h2>Remastered</h2>
+        <div id="remastered-content" class="story-text">Loading...</div>
+      </article>
+    </section>
+  </main>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
